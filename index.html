@@ -1,0 +1,234 @@
+<html>
+<title>ssc</title>
+<body>
+<style>
+ body {
+  text-align: center;
+  vertical-align: middle;
+  margin: 0 auto;
+  padding: 10% 10% 10% 10% ;
+  width: 100%;
+  height: 100%;
+  line-height: 1.5em;
+  background: red;
+}
+ 
+table {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 70%;
+  max-width: 850px;
+  height: 50%;
+  background-color: black;
+  transform: translate(-50%, -50%);
+  border:23px solid black;
+  padding: 35% 25% 35% 25%;
+  margin: 0 auto;
+  border-collapse: collapse;
+  font-family: sans-serif;
+  font-size: 1em;
+  font-weight: bold;
+  text-align: center;
+  line-height: 1em;
+  background: white;
+}
+ 
+ a:link { color: black; text-decoration: none;}
+ a:visited { color: black; text-decoration: none;}
+ a:hover { color: red; text-decoration: none;}
+
+ 
+@media (min-width:50px) and (max-width:300px){html{font-size:15px}}
+@media (min-width:301px) and (max-width:450px){html{font-size:50px}}
+@media (min-width:451px) and (max-width:650px){html{font-size:75px}}
+@media (min-width:651px) and (max-width:850px){html{font-size:100px}}
+@media (min-width:851px){html{font-size:140px}}
+ 
+*,
+*:before,
+*:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* .button */
+
+.button {
+    width: 100%;
+    display: inline-block;
+    position: relative;
+    border: 0px solid black;
+    overflow: hidden;
+    text-decoration: none;
+    font-size: 1em;
+    font-weight: bold;
+    outline: none;
+    color: black;
+    background: transparent;
+    font-family: 'helvetica', sans-serif;
+}
+
+.button span {
+    -webkit-transition: 0s;
+    -moz-transition: 0s;
+    -o-transition: 0s;
+    transition: 0s;
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+.button:before,
+.button:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    text-align: center;
+    opacity: 0;
+    -webkit-transition: 0s,opacity 0s;
+    -moz-transition: 0s,opacity 0s;
+    -o-transition: 0s,opacity 0s;
+    transition: 0s,opacity 0s;
+}
+
+/* :before */
+
+.button:before {
+    content: attr(data-hover);
+    -webkit-transform: translate(0%,0);
+    -moz-transform: translate(0%,0);
+    -ms-transform: translate(0%,0);
+    -o-transform: translate(0%,0);
+    transform: translate(0%,0);
+}
+
+/* :after */
+
+.button:after {
+    content: attr(data-active);
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+}
+
+/* Span on :hover and :active */
+
+.button:hover span,
+.button:active span {
+    opacity: 0;
+    -webkit-transform: scale(0);
+    -moz-transform: scale(0);
+    -ms-transform: scale(0);
+    -o-transform: scale(0);
+    transform: scale(0);
+}
+
+/*  
+    We show :before pseudo-element on :hover 
+    and :after pseudo-element on :active 
+*/
+
+.button:hover:before,
+.button:active:after {
+    opacity: 1;
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+}
+
+/* 
+  We hide :before pseudo-element on :active
+*/
+
+.button:active:before {
+    -webkit-transform: translate(0,0);
+    -moz-transform: translate(0,0);
+    -ms-transform: translate(0,0);
+    -o-transform: translate(0,0);
+    transform: translate(0,0);
+    -webkit-transition-delay: 0s;
+    -moz-transition-delay: 0s;
+    -o-transition-delay: 0s;
+    transition-delay: 0s;
+}
+</style>
+
+<a href="main.html">
+<table width="100%" height="100%" style="float: center">
+<button class="button" type="button" data-hover="social"><span>
+<script language="JavaScript">
+<!--
+function random_text()
+{};
+var random_text = new random_text();
+// Set the number of text strings to zero to start
+var number = 0;
+// Incremental list of all possible Text
+random_text[number++] = "social"
+random_text[number++] = "slow"
+random_text[number++] = "sad"
+random_text[number++] = "sleeping"
+random_text[number++] = "seven"
+random_text[number++] = "summer"
+random_text[number++] = "serious"
+random_text[number++] = "surreal"
+random_text[number++] = "street"
+random_text[number++] = "stop"
+random_text[number++] = "sell"
+random_text[number++] = "stylish"
+random_text[number++] = "so"
+random_text[number++] = "slice"
+random_text[number++] = "sweet"
+// Create a random number with limits based on the number
+// of possible random text strings
+var random_number = Math.floor(Math.random() * number);
+// Write out the random text to the browser
+document.write(random_text[random_number]);
+</script></span></button>
+
+<button class="button" type="button" data-hover="smoking" data-active="hello"><span>smoking</span></button>
+
+<button class="button" type="button" data-hover="collector"><span><script language="JavaScript">
+function random_text()
+{};
+var random_text = new random_text();
+// Set the number of text strings to zero to start
+var number = 0;
+// Incremental list of all possible Text
+random_text[number++] = "camp"
+random_text[number++] = "club"
+random_text[number++] = "county"
+random_text[number++] = "couch"
+random_text[number++] = "coconut"
+random_text[number++] = "cook"
+random_text[number++] = "computer"
+random_text[number++] = "cheese"
+random_text[number++] = "cat"
+random_text[number++] = "cow"
+random_text[number++] = "comb"
+random_text[number++] = "counter"
+// Create a random number with limits based on the number
+// of possible random text strings
+var random_number = Math.floor(Math.random() * number);
+// Write out the random text to the browser
+document.write(random_text[random_number]);
+-->
+</script></span></button></a>
+ </table>
+</body>
+</html>
